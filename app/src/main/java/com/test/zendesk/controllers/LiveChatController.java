@@ -8,11 +8,14 @@ import com.zopim.android.sdk.api.ZopimChatApi;
 import com.zopim.android.sdk.data.observers.AccountObserver;
 import com.zopim.android.sdk.model.Account;
 
+import static com.zendesk.logger.Logger.setLoggable;
+
 public class LiveChatController {
 
     private static LiveChatController instance;
 
     public static LiveChatController getInstance() {
+        setLoggable(true);
         if (instance == null) {
             synchronized (LiveChatController.class) {
                 if (instance == null) {
@@ -62,5 +65,4 @@ public class LiveChatController {
 
         void onChatUnavailable();
     }
-
 }
